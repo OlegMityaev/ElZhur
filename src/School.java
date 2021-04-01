@@ -1,11 +1,11 @@
 public class School {
     String Name;
     String Adress;
-    String Classes[];
-    String Learners[];
-    String Teachers[];
-    String Employees[];
-    String Sections[];
-    String Electives[];
+    Class[] classes = new Class[10];
+    Learner[] learners = new Learner[30];
+    Teacher[] teachers = new Teacher[10];
+    Employee[] employees = new Employee[15];
+    Section[] sections = new Section[3];
+    Elective[] electives = new Elective[4];
 }
 
