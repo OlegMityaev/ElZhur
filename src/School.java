@@ -1,12 +1,20 @@
-public abstract class School {
+public class School {
     String Name;
     String Adress;
+    int e=0;
+    int a = 0;
+    int b = 0;
+    int d = 0;
+    int x = 0;
+    int y = 0;
     Class[] classes = new Class[10];
     Learner[] learners = new Learner[30];
     Teacher[] teachers = new Teacher[10];
     Employee[] employees = new Employee[15];
     Section[] sections = new Section[3];
     Elective[] electives = new Elective[4];
+
+
 
 
     public void getListTeachers(){
@@ -53,23 +61,57 @@ public abstract class School {
         }
     }
 
-    public Person[] getAllPersonsInSchool(){
-        Person[] person = new Person[learners.length + teachers.length + employees.length + listParents.length];
-        int k=0;
-        for (int i = 0; i <= learners.length; i++) {
-            person[k] = learners[i];
-            k++;
-            System.out.println("Ученики: " + learners[i].FullName);
+    public Participant getParticipant(int ID){
+        Participant rabotnik = null;
+        for (int i = 0; i < learners.length; i++) {
+            if (ID == learners[i].CardID) {
+                rabotnik = learners[i];
+                break;
+            }
         }
-        for (int i = 0; i <= teachers.length; i++){
-            person[k] = teachers[i];
-            k++
-            System.out.println("Учителя: " + teachers[i].FullName);
+        for (int i = 0; i < teachers.length; i++) {
+            if (ID == teachers[i].CardID) {
+                rabotnik = teachers[i];
+                break;
+            }
         }
-            System.out.println("Сотрудники: " + employees[i].FullName);
-            System.out.println("Родители: " + listParents[i].FullName);
+        for (int i = 0; i < employees.length; i++) {
+            if (ID == employees[i].CardID) {
+                rabotnik = employees[i];
+                break;
+            }
+        }
+        return rabotnik;
+    }
 
-        return p;
+    public void addTeacher(Teacher t){
+        teachers[e] = t;
+        e++;
+    }
+
+    public void addEmployeer(Employee em){
+        employees[a] = em;
+        a++;
+    }
+
+    public void addLerner(Learner l){
+        learners[b] = l;
+        b++;
+    }
+
+    public void addClass(Class c){
+        classes[d] = c;
+        d++;
+    }
+
+    public void addElective(Elective el){
+        electives[x] = el;
+        x++;
+    }
+
+    public void addSection(Section s){
+        sections[y] = s;
+        y++;
     }
 }
 

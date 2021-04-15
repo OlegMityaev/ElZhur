@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Teacher extends Participant {
     public String Position;
     public String Qualification;
@@ -7,4 +9,5 @@ class Teacher extends Participant {
         this.Position = Position;
         this.Qualification = Qualification;
     }
+
 }
